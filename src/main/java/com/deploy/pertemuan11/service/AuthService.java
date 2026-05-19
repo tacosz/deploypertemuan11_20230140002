@@ -4,7 +4,8 @@ import com.deploy.pertemuan11.model.Profile;
 import com.deploy.pertemuan11.model.User;
 import com.deploy.pertemuan11.model.dto.RegisterRequest;
 import com.deploy.pertemuan11.repository.UserRepository;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.jspecify.annotations.Nullable;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -43,7 +44,7 @@ public class AuthService {
 
     public User getLoggedInUser() {
 
-        Authentication authentication =
+         Authentication authentication =
                 SecurityContextHolder.getContext().getAuthentication();
 
         String username = authentication.getName();
