@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 0.5rem;
+        }
+        .profile-info {
+            text-align: left;
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        strong {
+            color: #2c3e50;
+            display: inline-block;
+            width: 90px;
+        }
+        .btn-logout {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-logout:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Home Dashboard</h1>
+
+    <div class="profile-info">
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>Nama:</strong> <span th:text="${profile.nama}"></span></p>
+        <p><strong>Alamat:</strong> <span th:text="${profile.alamat}"></span></p>
+    </div>
+
+    <a th:href="@{/logout}" class="btn-logout">
+        Logout
+    </a>
+</div>
+
+</body>
+</html>
